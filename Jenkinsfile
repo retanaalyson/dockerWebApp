@@ -4,7 +4,7 @@ node {
     checkout scm  
   }
   stage('Build docker Image'){
-    app = docker.build("lysondrg19/dockerwebapp")
+    app = docker.build("alysondrg19/dockerwebapp")
   }
   stage('Push Image'){
     docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {            
