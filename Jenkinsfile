@@ -4,7 +4,7 @@ node {
     checkout scm  
   }
   stage('construir'){
-    app = docker.build("alysondrg19/dockerwebapp")
+    app = docker.build("alysondrg19/dockerweb")
   }
   stage('insertar'){
     docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {            
