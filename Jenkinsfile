@@ -1,12 +1,12 @@
 node {
   def app 
-  stage('clone repository') {
+  stage('clonar') {
     checkout scm  
   }
-  stage('Build docker Image'){
+  stage('construir'){
     app = docker.build("alysondrg19/dockerwebapp")
   }
-  stage('Push Image'){
+  stage('insertar'){
     docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {            
       app.push("${env.BUILD_NUMBER}")            
       app.push("latest")   
